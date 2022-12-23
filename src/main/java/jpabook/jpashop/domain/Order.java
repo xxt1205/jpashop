@@ -1,5 +1,6 @@
 package jpabook.jpashop.domain;
 
+import jpabook.jpashop.repository.OrderStatus;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,7 +37,7 @@ public class Order {
     private LocalDateTime orderDate; //주문시간
 
     @Enumerated(EnumType.STRING)
-    private OrderStatus Status;//주문 상대[ORDER, CANCEL]
+    private OrderStatus status;//주문 상대[ORDER, CANCEL]
 
     //연관관계 메서드
     public void setMember(Member member) {
