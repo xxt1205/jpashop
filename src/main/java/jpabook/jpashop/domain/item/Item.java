@@ -47,4 +47,9 @@ public abstract class Item {
         this.stockQuantity = restStock;
     }
 
+    public void addCategory(Category category) {
+        this.categories.add(category);
+        category.getItems().add(this);
+    }
+
 }
