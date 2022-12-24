@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 
 @Entity
 @Getter @Setter
-@DiscriminatorValue("M")
+@DiscriminatorValue("Movie")
 public class Movie extends Item{
 
     private String director;

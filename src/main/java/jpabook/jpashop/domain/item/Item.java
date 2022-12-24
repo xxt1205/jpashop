@@ -1,5 +1,6 @@
 package jpabook.jpashop.domain.item;
 
+import jpabook.jpashop.controller.BookForm;
 import jpabook.jpashop.exception.NotEnoughStockException;
 import lombok.Getter;
 import lombok.Setter;
@@ -51,5 +52,7 @@ public abstract class Item {
         this.categories.add(category);
         category.getItems().add(this);
     }
+
+
 
 }

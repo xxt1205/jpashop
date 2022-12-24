@@ -1,6 +1,7 @@
 package jpabook.jpashop.service;
 
-import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.controller.BookForm;
+import jpabook.jpashop.domain.item.Book;
 import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
@@ -12,15 +13,22 @@ import java.util.List;
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-public class itemService {
+public class ItemService {
 
     private final ItemRepository itemRepository;
 
     @Transactional
-    public void save(Item item) {
+    public void saveItem(Item item) {
         itemRepository.save(item);
 
     }
+
+    @Transactional
+    public void updateItem(Long itemId, UpdateItemDTO param) {
+        Book findItem = (Book)itemRepository.findOne(itemId);
+        findItem.changeBook(param);
+    }
+
 
     public List<Item> findItems () {
         return itemRepository.findAll();

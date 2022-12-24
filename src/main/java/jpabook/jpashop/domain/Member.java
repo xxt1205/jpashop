@@ -14,10 +14,6 @@ public class Member {
     public Member() {
     }
 
-    public Member( String name) {
-        this.name = name;
-    }
-
     @Id @Column(name = "member_id")
     @GeneratedValue(generator = "AUTO")
     private Long id;
@@ -30,6 +26,11 @@ public class Member {
     private List<Order> orders = new ArrayList<>();
 
 
+    public Member addMember(String name, Address address) {
+        this.name = name;
+        this.address = address;
+        return this;
+    }
 
 
 }
